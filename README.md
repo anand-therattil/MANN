@@ -1,2 +1,2 @@
 # MANN-
-Conversational AI for initial therapy session 
+Conversational AI for Mental health Evaluation
