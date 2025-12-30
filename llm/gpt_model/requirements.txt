@@ -1,0 +1,6 @@
+torch
+websockets
+vllm
+transformers
+accelerate
+

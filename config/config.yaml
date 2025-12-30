@@ -1,0 +1,53 @@
+urls:
+  qwen_server: "ws://localhost:8766"
+  ai4bharat_server: "ws://localhost:7777"
+  indri_server: "ws://localhost:8888"
+  gpt2_server: "ws://localhost:9999"
+
+prompts:
+  qwen_prompt: "You are a Mental Health Support Assistant. Provide empathetic and supportive responses to users seeking help with mental health issues."
+
+qwen:
+  # ----- SERVER SETTINGS -----
+  system_prompt: "You are a Mental Health Support Assistant. Provide empathetic and supportive responses to users seeking help with mental health issues."
+  host: "0.0.0.0"
+  port: 8766
+  model_name: "Qwen/Qwen2.5-7B-Instruct"
+
+  # --- MODEL & INFERENCE SETTINGS ---
+  gpu_memory_utilization: 0.6    # Safe adjustable GPU usage (vLLM)
+  max_model_len: 4096            # Max context length
+  temperature_min: 0.1           # Prevents zero-temp issues
+  default_temperature: 0.7       # Default sampling temp
+  default_max_tokens: 1024       # Default max tokens
+  partial_every_n_tokens: 3      # Partial streaming frequency
+  language: "en"
+
+  # ----- LOGGING SETTINGS -----
+  logging:
+    level: "INFO"
+    json: false
+    logfile: "qwen_server.log"
+
+  # ----- TIMEOUTS & SAFETY -----
+  timeouts:
+    generation_timeout_sec: 60
+    client_ping_interval: 20
+    client_ping_timeout: 20
+
+  # ----- ADVANCED vLLM OPTIONS -----
+  vllm:
+    tensor_parallel_size: 1
+    max_num_seqs: 2048
+
+
+
+
+
+asr:
+  vosk:
+    host: "0.0.0.0"
+    port: 8766
+    model_path: "/Users/cmi_10128/Desktop/documents/projects/MANN/asr/vosk/models/vosk-model-small-en-in-0.4"
+    sample_rate: 16000
+    persistent_connection: true
