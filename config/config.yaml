@@ -48,6 +48,6 @@ asr:
   vosk:
     host: "0.0.0.0"
     port: 8766
-    model_path: "/Users/cmi_10128/Desktop/documents/projects/MANN/asr/vosk/models/vosk-model-small-en-in-0.4"
+    model_path: "asr/vosk/models/vosk-model-small-en-in-0.4"
     sample_rate: 16000
     persistent_connection: true
